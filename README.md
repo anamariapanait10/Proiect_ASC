@@ -11,14 +11,14 @@ Example of valid inputs:
 
 Note that the input.txt file is always a text file and the output file is a binary file.
 -->
-###Numele echipei: **Unbreakables**
+### Numele echipei: **Unbreakables**
 
-###Proiect realizat de: 
+### Proiect realizat de: 
 
     • Panait Ana-Maria (grupa 132)
     • Teodorescu George-Tiberiu (grupa 132)
 
-##Descriere proiect:
+## Descriere proiect:
 
 Scripturi pentru encriptarea și decriptarea unui fisier text, folosind operatia XOR. Acestea iau ca 
 parametru în linia de comandă o cheie, un fișier input, care urmează să fie encriptat 
@@ -27,7 +27,7 @@ parametru în linia de comandă o cheie, un fișier input, care urmează să fie
 
 
 
-##Sintaxa valida pentru rularea scripturilor:
+## Sintaxa valida pentru rularea scripturilor:
 
     • python encrypt.py password2021 input.txt output
     • python decrypt.py output password2021 input_recuperat.txt
@@ -46,7 +46,7 @@ pe numere întregi modulo 2:
 Altfel spus, identifică diferențele din perechile de biți din reprezentarea binară. Daca consideram 0 ca fiind fals și 1 ca fiind adevărat, se observă că A ⊕ B este adevărat dacă și numai dacă unul 
 dintre A și B este adevărat.
 		
-##Proprietăți importante ale operației XOR
+## Proprietăți importante ale operației XOR
     1. A ⊕ B = B ⊕ A
     2. A ⊕ ( B ⊕ C ) = ( A ⊕ B ) ⊕ C
     3. A ⊕ 0 = 0 ⊕ A = A
@@ -65,7 +65,7 @@ Atunci pentru fiecare caracter din text vom avea:
 
 ## De ce folosim XOR pentru criptare?
 
-Avantajele folosirii acestei criptări sunt:
+### Avantajele folosirii acestei criptări sunt:
 - este ușor de implementat și analizat
 - este rapidă din punct de vedere computațional
 - nu contează între câți operanzi facem XOR și nici în ce ordine
@@ -74,7 +74,7 @@ Avantajele folosirii acestei criptări sunt:
   nu se poate știi cu certitudine rezultatul
 - este greu de spart folosind algoritmul brut de generare a tuturor posibilităților de chei
   
-Dezavantajele sunt:
+### Dezavantajele sunt:
 - criptarea are un nivel de securitate scăzut dacă nu sunt îndeplinite următoarele condiții: o cheie este folosită la o singură criptare 
   și nu este dezvăluită, lungimea ei să fie măcar la fel de mare ca textul de encriptat, iar caracterele din cheie sa fie perfect aleatoare, 
   cum se întampla în cazul dispozitivelor hardware de generare aleatoare a unor numere ce se bazează pe fenomene fizice
@@ -84,7 +84,7 @@ Dezavantajele sunt:
 - dacă conținutul textului input poate fi ghicit sau aflat, atunci cheia poate fi descoperită, făcând 
 XOR între textul inițial și cel encriptat
   
-Concluzie: 
+### Concluzie: 
 
 Algoritmul de encriptare XOR care folosește repetarea cheii este ideal pentru a ascunde informații 
 pentru care nu este necesară o securitate ridicată, fiind ușor de implemetat. Dacă informația necesită o
