@@ -13,6 +13,11 @@ Note that the input.txt file is always a text file and the output file is a bina
 -->
 ### Numele echipei: **Unbreakables**
 
+## Mesaj pentru echipa ErrorsGenerators
+Din neatenție am pus o cheie necorespunzătoare și am cerut permisiunea domnului profesor să o 
+modificăm ca să fie conform cu cerința, fară să difere mult de cea inițială.
+De aceea apare modificat fisierul output dupa deadline, în caz ca vă întrebați.
+
 ### Proiect realizat de: 
 
     • Panait Ana-Maria (grupa 132)
@@ -104,6 +109,15 @@ lungimea cheii să fie mai mică decât textul și de aceea o repetăm când se 
 reluarea parcurgerii de la început fără a afecta parcurgerea textului input. Această repetare a cheii
 o realizăm folosind operatorul %(lungimea_cheii) care ne va da întotdeauna un indice valid pentru cheie.
 
+<!--
+## Partea a doua a proiectului: aflați cheia cu care a fost criptat fișierul output al echipei adverse
+**Echipă adversă:** ErrorsGenerators
+
+**Cheia echipei adverse:** 
+
+**Abordarea problemei:**
+
+-->
 
 ## Bibliografie
 
