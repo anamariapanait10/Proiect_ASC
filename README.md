@@ -13,29 +13,70 @@ Note that the input.txt file is always a text file and the output file is a bina
 -->
 ### Numele echipei: **Unbreakables**
 
+### Proiect realizat de: 
+
+    • Panait Ana-Maria (grupa 132)
+    • Teodorescu George-Tiberiu (grupa 132)
+## Sintaxa valida pentru rularea scripturilor:
+
+    • python encrypt.py password2021 input.txt output
+    • python decrypt.py output password2021 input_recuperat.txt
+
 ## Mesaj pentru echipa ErrorsGenerators
 Din neatenție am pus o cheie necorespunzătoare și am cerut permisiunea domnului profesor să o 
 modificăm ca să fie conform cu cerința, fară să difere mult de cea inițială.
 De aceea apare modificat fisierul output dupa deadline, în caz ca vă întrebați.
 
-### Proiect realizat de: 
+## Partea a doua a proiectului:
+**Echipă adversă:** ErrorsGenerators
 
-    • Panait Ana-Maria (grupa 132)
-    • Teodorescu George-Tiberiu (grupa 132)
+**Cheia echipei adverse:** c6MnGDupeDHnGk 
 
-## Descriere proiect:
+### Cerințe:
+    
+    1. Folosiți fișierul input.txt, output și fișierele sursă de pe pagina github a 
+    echipei adverse pentru a afla cheia (dacă cheia este disponibilă undeva pe pagina github a
+    echipei adverse, folosiți-o; folosiți-vă de orice mijloace tehnice pentru a descoperi cheia)
+    2. Folosiți fișierul output și fișierele sursă de pe pagina github a echipei
+    adverse pentru a afla cheia (NU aveți voie să folosiți input.txt)
+
+### Abordarea cerințelor:
+ 
+**Rezlvoare Partea I:**
+
+Pentru rezolvarea primei părți am realizat un script python denumit [xor_cipher_cracker_1.py](xor_cipher_cracker_1.py), care face XOR între 
+caracterele din fisierul **input.txt** și cele din **output**. Caracterele din **output** sunt calculate după formula X ⊕ K = Y, unde  
+X este un caracter din **input.txt**, K este carcterul din cheie corespunzator pozitiei lui X, ⊕ este operația XOR, iar
+Y este caracterul din **output**. Când efectuăm operația de XOR cu X în ambele părți ale egalității obținem K = X ⊕ Y și
+dacă aplicam formula pentru fiecare caracter din fișiere ajungem la un sir de carcatere ce conține cheia repetată.
+Dupa aceea, am luat primele 30 de caractere din șirul obținut în care știm sigur că se 
+repeta cheia măcar de două ori și maxim de trei ori, deoarece cheia are lungimea între 10 și 15 caractere. 
+Apoi am căutat o secvența de lungime între 10 și 15 care să se repete și când am găsit 
+una înseamnă că aceea este cheia cautată pe care o scriem apoi în fișierul **key.txt**.
+
+**Rezolvare Partea a II-a:**
+
+Pentru rezolvarea părții a doua am realizat un script python denumit [xor_cipher_cracker_2.py](xor_cipher_cracker_2.py).
+Mai întâi am aflat lungimea cheii, luând în considerare toate variantele posibile (numerele de la 10 la 15), 
+iar pentru fiecare împarțim fisierul output în secvente de lungime egala cu cea presupusă, apoi 
+calculăm media distantelor Hamming. Lungimea cheii va fi, în majoritatea cazurilor, cea care produce o medie cat mai mică.
+Dupa ce am aflat lungimea cheii, vom afla carcterele din cheie. Fisierul **input.txt** 
+este unul scris în limba romana, fara diacritice. Astfel, cele mai comune caractere sunt `"abcdefghijklmnopqrtuvwxyz -.,"`. 
+Cum lungimea cheii este mică, intuim că, pentru fiecare element al cheii, operatia XOR se va realiza de cele mai multe 
+ori cu un caracter din string-ul de mai sus, atunci când este construit **output**. Prin urmare, folosind doar fisierul 
+**output**, vom încerca să aflăm caracterul corespunzator pentru fiecare pozitie din cheie. Astfel, contorizăm, 
+pentru fiecare pozitie din chieie, de cate ori un elelement din multimea  
+`"ABCDEFGHIJKLMNOPQRTUVWXYZabcdefghijklmnopqrtuvwxyz0123456789"` are ca rezultat, în urma operatiei XOR cu un caracter 
+din output, un element din multimea `"abcdefghijklmnopqrtuvwxyz -.,"`, iar cheia va fi formată din caracterele pentru 
+care contorul este cel mai mare. La final cheia este scisă în fișierul **key.txt**.
+
+## Prima parte a proiectului:
 
 Scripturi pentru encriptarea și decriptarea unui fisier text, folosind operatia XOR. Acestea iau ca 
 parametru în linia de comandă o cheie, un fișier input, care urmează să fie encriptat 
 și un fișier output, unde se va scrie encriptarea/decriptarea fișierului input, folosind cheia 
 și operația XOR.
 
-
-
-## Sintaxa valida pentru rularea scripturilor:
-
-    • python encrypt.py password2021 input.txt output
-    • python decrypt.py output password2021 input_recuperat.txt
 
 ## Ce este XOR?
 XOR (Exclusive OR) este un operator binar care are ca rezultat numărul obținut prin 
@@ -109,15 +150,7 @@ lungimea cheii să fie mai mică decât textul și de aceea o repetăm când se 
 reluarea parcurgerii de la început fără a afecta parcurgerea textului input. Această repetare a cheii
 o realizăm folosind operatorul %(lungimea_cheii) care ne va da întotdeauna un indice valid pentru cheie.
 
-<!--
-## Partea a doua a proiectului: aflați cheia cu care a fost criptat fișierul output al echipei adverse
-**Echipă adversă:** ErrorsGenerators
 
-**Cheia echipei adverse:** 
-
-**Abordarea problemei:**
-
--->
 
 ## Bibliografie
 
@@ -136,4 +169,5 @@ https://qvault.io/cryptography/why-xor-in-cryptography/ \
 https://weinman.cs.grinnell.edu/courses/CSC161/2019S/homework/xor-cipher.shtml \
 https://www.dcode.fr/xor-cipher \
 https://stackoverflow.com/questions/20579363/how-to-decrypt-simple-xor-encryption \
-https://www.educative.io/edpresso/what-are-xor-encryption-and-decryption
+https://www.educative.io/edpresso/what-are-xor-encryption-and-decryption \
+https://github.com/gcjensen/xor-cipher-cracker
