@@ -44,7 +44,7 @@ De aceea apare modificat fisierul output dupa deadline, în caz ca vă întreba�
  
 **Rezlvoare Partea I:**
 
-Pentru rezolvarea primei părți am realizat un script python denumit [xor_cipher_cracker_1.py](./xor_cipher_cracker_1.py), care face XOR între 
+Pentru rezolvarea primei părți am realizat un script python denumit [xor_cipher_cracker_1.py](./proiect 1/xor_cipher_cracker_1.py), care face XOR între 
 caracterele din fisierul **input.txt** și cele din **output**. Caracterele din **output** sunt calculate după formula X ⊕ K = Y, unde  
 X este un caracter din **input.txt**, K este carcterul din cheie corespunzator pozitiei lui X, ⊕ este operația XOR, iar
 Y este caracterul din **output**. Când efectuăm operația de XOR cu X în ambele părți ale egalității obținem K = X ⊕ Y și
@@ -56,7 +56,7 @@ una înseamnă că aceea este cheia cautată pe care o scriem apoi în fișierul
 
 **Rezolvare Partea a II-a:**
 
-Pentru rezolvarea părții a doua am realizat un script python denumit [xor_cipher_cracker_2.py](./xor_cipher_cracker_2.py).
+Pentru rezolvarea părții a doua am realizat un script python denumit [xor_cipher_cracker_2.py](./proiect 1/xor_cipher_cracker_2.py).
 Mai întâi am aflat lungimea cheii, luând în considerare toate variantele posibile (numerele de la 10 la 15), 
 iar pentru fiecare împarțim fisierul output în secvente de lungime egala cu cea presupusă, apoi 
 calculăm media distantelor Hamming. Lungimea cheii va fi, în majoritatea cazurilor, cea care produce o medie cat mai mică.
